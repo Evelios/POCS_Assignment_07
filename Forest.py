@@ -12,6 +12,9 @@ class Forest:
   def setValue(self, location, value):
     self.forest.itemset(location, value)
 
+  def getForestMatrix(self):
+    return self.forest
+
   def getNeighborLocations(self, location):
     x = location[0]
     y = location[1]
@@ -61,3 +64,12 @@ class Forest:
           frontier.append(neighbor) 
 
     return explored
+  
+  def getUnoccupiedLocations(self):
+    unnocupied_locations = []
+
+    for index, forest_size in np.ndenumerate(self.forest):
+      if forest_size == 0:
+        unnocupied_locations.append(index)
+
+    return unnocupied_locations

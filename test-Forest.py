@@ -70,5 +70,20 @@ class ForestTest(unittest.TestCase):
     self.assertEqual(forest.getValue(location2), 2)
     self.assertEqual(forest.getValue(location3), 1)
 
+  def test_getUnoccupiedLocations(self):
+    forest = Forest(self.size)
+    location1 = (1, 3)
+    location2 = (2, 3)
+    location3 = (4, 4)
+
+    forest.addTree(location1)
+    forest.addTree(location2)
+    forest.addTree(location3)
+
+    unoccupied_locations = forest.getUnoccupiedLocations()
+    expected_ammount = self.size * self.size - 3
+
+    self.assertEqual(len(unoccupied_locations), expected_ammount)
+
 if __name__ == '__main__':
   unittest.main()
