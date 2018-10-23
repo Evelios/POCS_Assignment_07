@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+% Better line breaks between paragraphs and no indentes
+\usepackage[parfill]{parskip}
+
+% To get better spacing with itemized lists
+\usepackage{enumitem}
+\setlist{nosep,after=\vspace{\baselineskip}}
+
+% For creating augmented matricies
+\newenvironment{amatrix}[1]{%
+    \left[\begin{array}{@{}*{#1}{c}|c@{}}
+} {%
+    \end{array}\right]
+}
+
+% Creating math equation tags
+\newcommand\addtag{\refstepcounter{equation}\tag{\theequation}}
+
+\title{CSYS 300 PoCS Assignment 7}
+\author{Thomas Waters}
+\date{October 26th 2018}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{Code is located at}
+https://github.com/Evelios/PoCS\_Assignment\_07
+
+\break
+
+%--------------------------------------------------------------
+\section{Problem 1}
+\input{problem1.tex}
+
+\section{Problem 2}
+\input{problem2.tex}
+
+\section{Problem 3}
+\input{problem3.tex}
+
+\section{Problem 4}
+\input{problem4.tex}
+
+\section{Problem 5}
+\input{problem5.tex}
+
+\end{document}
+
