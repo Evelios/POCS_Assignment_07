@@ -3,11 +3,23 @@ import numpy as np
 class Forest:
 
   def __init__(self, size):
+    self.num_trees = 0
     self.size = size
     self.forest = np.zeros((self.size, self.size), dtype=int)
 
+  def copy(self):
+    other = Forest(self.size)
+    other.num_trees = self.num_trees
+    other.size = self.size
+    other.forest = np.copy(self.forest)
+
+    return other
+
   def getValue(self, location):
     return self.forest.item(location)
+
+  def getNumTrees(self):
+    return self.num_trees
 
   def setValue(self, location, value):
     self.forest.itemset(location, value)
@@ -37,6 +49,7 @@ class Forest:
     return 0 <= x < self.size and 0 <= y < self.size 
 
   def addTree(self, location):
+    self.num_trees += 1
     self.setValue(location, 1)
     forest_locations = self.getForestLocations(location)
     forest_size = len(forest_locations)
