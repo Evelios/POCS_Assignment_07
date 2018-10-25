@@ -1,0 +1,245 @@
+Solving for the complamentary cumulative distributions for continuous distributions. The formula used for solving for the complamentary cumulative distribution is,
+\[
+  P_\leq (A)
+  =
+  \int_{p^{-1}(A^{-\gamma})}^\infty
+    p(x)dx
+  =
+  p_\leq(p^{-1}(A^{-\gamma}))
+ \addtag
+\]
+
+Here $p^{-1}$ represents the inverse function, so that is the first thing that needs to be found.
+
+(a) Solving for
+$P_\leq (A)$
+from
+$p(x) = cx^{ -(q+1) }$
+
+\[
+  p = cx^{ -(q+1) }
+  \addtag
+\]
+
+\[
+  x = cp'^{ -(q+1) }
+  \addtag
+\]
+
+\[
+  x / c
+  =
+  p'^{ -(q+1) }
+  \addtag
+\]
+
+\[
+  p'
+  =
+  (x / c)^{-(\frac{1}{q + 1})}
+  \addtag
+\]
+
+\[
+  p'(A^{-\gamma})
+  =
+  (A^{-\gamma} / c)^{-(\frac{1}{q + 1})}
+  \addtag
+\]
+
+\[
+  P_\leq (A)
+  =
+  \int_{
+    \frac{A^{-\gamma}}{c}
+      ^{-(\frac{1}{q + 1})}
+    }^\infty
+    cx^{ -(q+1) }
+    dx
+  \addtag
+\]
+
+\[
+  =
+  \left.
+  -\frac{c}{q}
+   x^{-q}
+  \right|_{
+    (A^{-\gamma} / c)^{-(\frac{1}{q + 1})}
+  }^{
+    \infty
+  }
+  \addtag
+\]
+
+\[
+  =
+  \left[
+    0 -
+    -\frac{c}{q}
+    \left(
+      (A^{-\gamma} / c)
+        ^{-(\frac{1}{q + 1})}
+    \right)^{-q}
+  \right]
+  \addtag
+\]
+
+\[
+  =
+  \frac{c}{q}
+  \left(
+    (A^{-\gamma} / c)^{-(\frac{1}{q + 1})}
+  \right)^{-q}
+  \addtag
+\]
+
+\[
+  =
+  \frac{c}{q}
+  \left(
+    \frac{A^{-\gamma}}{c}
+  \right)
+    ^{-(\frac{q}{q + 1})}
+  \addtag
+\]
+
+\[
+  =
+  \frac{c}{q}
+  \left(
+    \frac{A^{-\gamma}}{c}
+  \right)
+    ^{-(1 + \frac{1}{q})}
+  \addtag
+\]
+
+(b) Solving for
+$P_\leq (A)$
+from
+$p(x) = ce^{-x}$ 
+
+\[
+  p = e^{-x}
+  \addtag
+\]
+
+\[
+  x = e^{-p'}
+  \addtag
+\]
+
+\[
+  ln(x) = -p'
+  \addtag
+\]
+
+\[
+  p' = -ln(x)
+  \addtag
+\]
+
+\[
+  p'(A^{-\gamma}) =
+  -ln(A^{-\gamma})
+  \addtag
+\]
+
+\[
+  P_\leq (A)
+  =
+  \int_{-ln(A^{-\gamma})}^\infty
+    ce^{-x}
+    dx
+  \addtag
+\]
+
+\[
+  =
+  \left.
+    -ce^{-x}
+  \right|_{-ln(A^{-\gamma})}^{\infty}
+  \addtag
+\]
+
+\[
+  =
+  \left(
+    0
+      -
+    -ce^{-(-ln(A^{-\gamma}))}
+  \right)
+  \addtag
+\]
+
+\[
+  =
+  ce^{ln(A^{-\gamma})}
+  \addtag
+\]
+
+\[
+  P_\leq (A)
+  =
+  cA^{-\gamma}
+  \addtag
+\]
+
+(c) Solving for
+$P_\leq (A)$
+from
+$p(x) = ce^{-x^2}$
+
+\[
+  p = ce^{-x^2}
+  \addtag
+\]
+
+\[
+  x = ce^{-p'^2}
+  \addtag
+\]
+
+\[
+  x = ce^{-p'^2}
+  \addtag
+\]
+
+\[
+  x / c
+  =
+  e^{-p'^2}
+  \addtag
+\]
+
+\[
+  ln(x / c)
+  =
+  -p'^2
+  \addtag
+\]
+
+\[
+  p'
+  =
+  (-ln(x / c))^{1/2}
+  \addtag
+\]
+
+\[
+  p'(A^{-\gamma})
+  =
+  (-ln(A^{-\gamma} / c))^{1/2}
+  \addtag
+\]
+
+\[
+  P_\leq (A)
+  =
+  \int_{
+    (-ln(A^{-\gamma} / c))^{1/2}
+  }^\infty
+    ce^{-x^2}
+    dx
+  \addtag
+\]
