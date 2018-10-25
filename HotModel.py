@@ -21,14 +21,38 @@ class HotModel:
   def getCharacteristicScale(self):
     return self.grid_size / 10
 
-  # This probability needs to be normalized
   def probability(self, location):
-    # characteristic sjcale for the distribution
-    l = self.prob_scale 
-    x = location[0] + 1
-    y = location[1] + 1
+    return 1 / self.grid_size**2
 
-    return self.norm_const * exp(-x/l) * exp(-y/l)
+  # This probability needs to be normalized
+  # def probability(self, location):
+  #   # characteristic sjcale for the distribution
+  #   l = self.prob_scale 
+  #   x = location[0] + 1
+  #   y = location[1] + 1
+
+    # return self.norm_const * exp(-x/l) * exp(-y/l)
+
+  def isFullyPopulated(self):
+    return self.getNumTrees() >= self.grid_size**2
+
+  def getNumTrees(self):
+    return self.forest.getNumTrees()
+
+  def getNormalizedNumTrees(self):
+    return self.getNumTrees() / self.grid_size**2 
+
+  def getForestYield(self):
+    return self.normalizedAverageYieldFrom(self.forest)
+  
+  def getForestMatrix(self):
+    return np.copy(self.forest.getForestMatrix())
+
+  def normalizedAverageYieldFrom(self, forest):
+    return self.averageYieldFrom(forest) / self.grid_size**2
+
+  def averageYieldFrom(self, forest):
+    return forest.getNumTrees() - self.averageLightningDamageFrom(forest)
 
   def averageLightningDamageFrom(self, forest):
     forest_matrix = forest.getForestMatrix()
@@ -37,21 +61,14 @@ class HotModel:
       loc_prob = self.probability(index)
       damage += forest_size * loc_prob
     return damage
-      
-
-  def averageYieldFrom(self, forest):
-    return forest.getNumTrees() - self.averageLightningDamageFrom(forest)
-
-  def normalizedAverageYieldFrom(self, forest):
-    return self.averageYieldFrom(forest) / self.grid_size**2
 
   def addTree(self):
     location = self.getNextTreeLocation()
     self.forest.addTree(location)
 
   def getNextTreeLocation(self):
-    best_location = ()
-    best_yield = 0
+    best_location = None
+    best_yield = -1
 
     for location in self.getFutureSearchLocations():
       simulated_forest = self.forest.copy()
@@ -61,6 +78,9 @@ class HotModel:
       if avg_yield > best_yield:
         best_yield = avg_yield
         best_location = location
+
+    if best_location is None:
+      raise RuntimeError('Next Tree Location Not Found')
 
     return best_location
 
