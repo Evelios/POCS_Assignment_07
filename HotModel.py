@@ -14,7 +14,8 @@ class HotModel:
 
   def getNormalizationConstant(self):
     return (
-      (1 - exp(-1 / self.prob_scale)) /
+      (1 - exp(1 / self.prob_scale))
+        /
       (1 - exp(-self.grid_size / self.prob_scale))
     )**2
 
@@ -22,16 +23,12 @@ class HotModel:
     return self.grid_size / 10
 
   def probability(self, location):
-    return 1 / self.grid_size**2
+    # characteristic scale for the distribution
+    l = self.prob_scale 
+    x = location[0] + 1
+    y = location[1] + 1
 
-  # This probability needs to be normalized
-  # def probability(self, location):
-  #   # characteristic sjcale for the distribution
-  #   l = self.prob_scale 
-  #   x = location[0] + 1
-  #   y = location[1] + 1
-
-    # return self.norm_const * exp(-x/l) * exp(-y/l)
+    return self.norm_const * exp(-x/l) * exp(-y/l)
 
   def isFullyPopulated(self):
     return self.getNumTrees() >= self.grid_size**2
