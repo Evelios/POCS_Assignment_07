@@ -77,7 +77,28 @@ class Forest:
           frontier.append(neighbor) 
 
     return explored
-  
+
+  def getForests(self):
+    forests = []
+    explored_forest_locations = []
+    for location in np.ndindex(self.size, self.size):
+      if self.getValue(location) == 0:
+        continue
+      
+      neighbor_explored = False
+      neighbors = self.getNeighborLocations(location)
+      for neighbor in neighbors:
+        if neighbor in explored_forest_locations:
+          neighbor_explored = True
+      
+      if not neighbor_explored:
+        forest_locations = self.getForestLocations(location)
+        forests.append(forest_locations)
+        explored_forest_locations.extend(forest_locations)
+
+    return forests
+
+
   def getUnoccupiedLocations(self):
     unnocupied_locations = []
 

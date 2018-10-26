@@ -41,9 +41,13 @@ class HotModel:
 
   def getForestYield(self):
     return self.normalizedAverageYieldFrom(self.forest)
-  
+ 
   def getForestMatrix(self):
-    return np.copy(self.forest.getForestMatrix())
+    matrix = np.copy(self.forest.getForestMatrix())
+    return matrix
+
+  def getForests(self):
+    return self.forest.getForests()
 
   def normalizedAverageYieldFrom(self, forest):
     return self.averageYieldFrom(forest) / self.grid_size**2
