@@ -1,5 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1540585468 "c:/Users/IBM_ADMIN/Documents/POCS_Assignment_07/latex/main.tex" "main.pdf" "main" 1540585468
+["pdflatex"] 1540597261 "c:/Users/IBM_ADMIN/Documents/POCS_Assignment_07/latex/main.tex" "main.pdf" "main" 1540597262
+  "../images/best-yield-forests.png" 1540597124 14165 3284a7ce91a208c7b1bd4c65edc2978d ""
+  "../images/forest-size-distribution.png" 1540597145 21645 2ede78292009d7adf1b6ef0c26e2efe9 ""
+  "../images/yield-curve.png" 1540597109 38287 d3750678b02410ca18cecd5e2ddca941 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233955448 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -64,12 +67,12 @@
   "C:/Users/IBM_ADMIN/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1514486332 4061335 96449ee71f660f8b5c9977a25234aff8 ""
   "C:/Users/IBM_ADMIN/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1514486309 80423 3cfba73105275d3ad410701d89fbdf7a ""
   "c:/Users/IBM_ADMIN/Documents/POCS_Assignment_07/latex/main.tex" 1540503214 936 dcb67b8b35ec949dc94d2c9be7f789ed ""
-  "main.aux" 1540585468 293 5d94e92d1adb39102038b89e2cf35114 ""
+  "main.aux" 1540597262 293 5811f9957fb60d3f8251bad2cd4d7455 ""
   "main.tex" 1540503214 936 dcb67b8b35ec949dc94d2c9be7f789ed ""
   "problem1.tex" 1540585467 3133 bb05e8c92b7c16d558a413f725ec4562 ""
   "problem2.tex" 1540504046 345 06b0e5ff520c9318200ee9940f0eb905 ""
-  "problem3.tex" 1540322148 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "problem3.tex" 1540597260 589 c9990dbf3b0fc98b058b6b87c918c1e5 ""
   (generated)
   "main.aux"
-  "main.pdf"
   "main.log"
+  "main.pdf"

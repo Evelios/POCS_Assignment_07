@@ -3,7 +3,7 @@ import numpy as np
 from HotModel import HotModel
 
 def main():
-  size = 32 
+  size = 32
 
   yield_curve_1, density_1, best_forest_1, best_forest_distribution_1 = getYieldCurve(size, 1)
   yield_curve_2, density_2, best_forest_2, best_forest_distribution_2 = getYieldCurve(size, 2)
